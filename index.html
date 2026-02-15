@@ -1,370 +1,303 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Maimouna BA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          keyframes: {
-            'fade-in': {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-          },
-          animation: {
-            'fade-in': 'fade-in 1s ease-out forwards',
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    .scroll-smooth { scroll-behavior: smooth; }
-    .project-item { transition: all 0.3s ease; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Maimouna BA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #dynamic-text {
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+    </style>
 </head>
+<body class="bg-[url('assets/images/fond.png')] bg-cover bg-center text-slate-900 dark:bg-slate-900 dark:text-white transition-colors duration-500 '>
 
-<body class="bg-gray-100 text-gray-800 scroll-smooth">
-<div class="fixed inset-0 -z-10">
-  <img src="assets/images/phooto.jpeg" alt="Background" class="w-full h-full object-cover opacity-100" />
-  <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-gray-100/50 to-gray-100"></div>
-</div>
 
-<header class="bg-white/90 backdrop-blur-sm shadow fixed w-full top-0 z-50">
-  <nav class="container mx-auto flex justify-between items-center p-4">
-    <h1 class="font-bold text-xl text-indigo-700 uppercase tracking-widest">Maimouna BA</h1>
-    <ul id="menu" class="hidden md:flex gap-6 text-sm font-semibold">
-      <li><a href="#about" class="hover:text-indigo-600 transition">À propos</a></li>
-      <li><a href="#skills" class="hover:text-indigo-600 transition">Compétences</a></li>
-      <li><a href="#projects" class="hover:text-indigo-600 transition">Projets</a></li>
-      <li><a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="sticky top-0 z-50 bg-white dark:bg-slate-800 backdrop-blur-md border-b border-slate-200 dark:border-slate-700">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex justify-between items-center">
+        <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Maimouna BA
+        </span>
+
+        <div class="flex items-center gap-4">
+            <ul id="menu" class="hidden md:flex gap-6 text-sm font-semibold">
+                <li><a href="#about" class="hover:text-indigo-600 transition">À propos</a></li>
+                <li><a href="#experience" class="hover:text-indigo-600 transition">Parcours</a></li>
+                <li><a href="#skills" class="hover:text-indigo-600 transition">Compétences</a></li>
+                <li><a href="#projects" class="hover:text-indigo-600 transition">Projets</a></li>
+                <li><a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Contact</a></li>
+            </ul>
+
+            <button id="dark-toggle" onclick="toggleDark()" class="bg-slate-200 dark:bg-slate-700 px-3 py-1 rounded-lg text-sm">🌙</button>
+            
+            <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+        </div>
+    </div>
+</nav>
+
+<header id="about" class="relative w-full px-10 mx-auto px-6 py-20 text-center fade-in">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-20 animate-pulse rounded-3xl -z-10"></div>
+
+    <div class="flex-1 flex justify-end">
+    <img src="assets/images/Mon Image.jpeg" alt="Photo de Maimouna BA"
+         class="w-60 h-60 md:w-80 md:h-80 rounded-full border-4 border-blue-600 shadow-2xl">
+  </div>
+
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+        Futur Ingénieur en <span id="dynamic-text" class="text-blue-600">Génie Informatique</span>
+    </h1>
+
+    <p class="text-lg text-amber-100 dark:text-slate-300 max-w-2xl mx-auto mb-10 fade-in">
+        Passionnée par l'algorithmique et le développement logiciel. Je transforme des concepts théoriques en solutions numériques concrètes, tout en créant des interfaces modernes et intuitives.
+    </p>
+
+    <div class="flex justify-center gap-4 fade-in">
+        <a href="assets/cv.pdf" download 
+           class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transform hover:-translate-y-1 transition duration-300">
+            Télécharger CV
+        </a>
+        <a href="https://github.com/maimounaba990-hadja " target="_blank" 
+           class="bg-slate-900 text-white px-6 py-3 rounded-xl hover:bg-slate-800 transform hover:-translate-y-1 transition duration-300">
+            Voir mon GitHub
+        </a>
+    </div>
 </header>
 
-<section class="min-h-screen flex flex-col md:flex-row items-center justify-center text-white px-6 pt-20 bg-indigo-900/40">
-  <div class="md:w-1/2 text-center md:text-left">
-    <h2 class="text-4xl md:text-6xl font-bold mb-4 opacity-0 animate-fade-in">Développeuse Web Frontend</h2>
-    <p class="text-lg opacity-0 animate-fade-in [animation-delay:300ms] mb-8">Bonjour, je suis <strong>Maimouna BA</strong>. Passionnée par la création d'interfaces modernes, fluides et performantes.</p>
-    <a href="#projects" class="opacity-0 animate-fade-in [animation-delay:500ms] bg-white text-indigo-700 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition shadow-xl inline-block">Découvrir mes projets</a>
-  </div>
-  <div class="md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0">
-    <img src="assets/images/Mon Image.jpeg" alt="Maimouna BA" class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-lg object-cover">
-  </div>
-</section>
+<section id="experience" class="max-w-5xl mx-auto px-6 py-16 fade-in">
+    <h2 class="text-3xl font-bold border-l-8 border-blue-600 pl-4 uppercase tracking-tighter mb-12">
+        Mon Parcours
+    </h2>
 
-<section id="about" class="container mx-auto py-24 px-4">
-  <div class="max-w-5xl mx-auto bg-white/90 backdrop-blur p-8 rounded-3xl shadow-xl border border-white">
-    <h2 class="text-3xl font-bold mb-6 text-indigo-700 border-b-2 border-indigo-100 pb-2">À propos</h2>
-    <p class="text-lg leading-relaxed text-gray-700 mb-10">
-      Étudiante en développement web frontend, je me spécialise dans la conception d'expériences utilisateur intuitives. 
-      Mon parcours m'a permis de maîtriser les outils modernes du web tout en gardant une base solide en algorithmique avec le langage C.
-    </p>
-
-    <h3 class="text-2xl font-bold text-indigo-600 mb-6 underline">Ma Formation</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      
-      <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border-t-4 border-indigo-500">
-        <div class="relative w-full h-44 mb-4 overflow-hidden rounded-2xl bg-gray-900">
-          <img src="assets/images/affiche.jpeg" alt="images/jpeg">
-          
+    <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-4">
+        <div class="mb-10 ml-6">
+            <span class="absolute -left-[11px] mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 ring-8 ring-white dark:ring-slate-900">
+                <div class="h-2 w-2 rounded-full bg-white"></div>
+            </span>
+            <h3 class="text-xl text-blue-200  font-bold">2ème année de Génie Informatique</h3>
+            <p class="text-sm font-semibold text-blue-600 mb-2">2025 - 2026</p>
+            <p class="text-amber-100 dark:text-slate-300">Approfondissement en développement logiciel, réseaux et systèmes d'information.</p>
         </div>
-        <h4 class="font-bold text-indigo-700 text-lg">2024 - 2025</h4>
-        <p class="text-sm font-semibold text-gray-800">Dév Web & Modélisation</p>
-        <p class="text-sm text-gray-600 mt-2">HTML, CSS, Langage C, MERISE, PHP,photoshop.</p>
-        <p class="text-xs italic text-indigo-400 mt-2">Durant mon stage jai fais un un affiche pour restauration.</p>
-      </div>
 
-      <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border-t-4 border-purple-500">
-        <div class="relative w-full h-44 mb-4 overflow-hidden rounded-2xl bg-gray-200 flex items-center justify-center">
-           <video class="w-full h-full object-cover" controls muted>
-            <source src="assets/video/vidio C algo.mp4" type="video/mp4">
+        <div class="mb-10 ml-6">
+            <span class="absolute -left-[11px] mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-400">
+                <div class="h-2 w-2 rounded-full bg-white"></div>
+            </span>
+            <h3 class="text-xl text-blue-200 font-bold">1ère année de Génie Informatique</h3>
+            <p class="text-sm font-semibold text-blue-600 mb-2">2023 - 2024</p>
+            <p class="text-amber-100 dark:text-slate-300">Acquisition des bases de la programmation (Langage C), algorithmique et architecture des ordinateurs.</p>
         </div>
-        <h4 class="font-bold text-purple-700 text-lg">2025 - 2026</h4>
-        <p class="text-sm font-semibold text-gray-800">Spécialisation Frontend</p>
-        <p class="text-sm text-gray-600 mt-2">Maîtrise de Tailwind CSS et Java moderne.</p>
-        <p class="text-xs text-indigo-500 mt-2 italic">Aperçu de mon projet Java sur le POO. Ici jai créé mon objet calculatrice qui se comporte comme une vraie machine.</p>
-      </div>
 
+        <div class="ml-6">
+            <span class="absolute -left-[11px] mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-400">
+                <div class="h-2 w-2 rounded-full bg-white"></div>
+            </span>
+            <h3 class="text-xl text-blue-200 font-bold">Baccalauréat Scientifique</h3>
+            <p class="text-sm font-semibold text-blue-600 mb-2">2023</p>
+            <p class="text-slate-200 dark:text-slate-300">Série S2 .</p>
+        </div>
     </div>
-  </div>
 </section>
-<section class="container mx-auto py-16 px-4">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 text-center uppercase tracking-widest">Expériences</h2>
-    
-    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
-      <div class="md:w-1/2 space-y-4">
-        <div class="border-l-4 border-indigo-600 pl-4">
-          <h4 class="font-bold text-xl">Câblage Réseau</h4>
-          <p class="text-gray-600 text-sm">Installation, raccordement aux switchs et vérification réseau.</p>
-        </div>
-        <div class="border-l-4 border-blue-400 pl-4">
-          <h4 class="font-bold text-xl">WordPress & Web Design</h4>
-          <p class="text-gray-600 text-sm">Réalisation de sites vitrines et personnalisation de thèmes.</p>
-        </div>
-        <div class="border-l-4 border-purple-400 pl-4">
-          <h4 class="font-bold text-xl">Projets Académiques</h4>
-          <p class="text-gray-600 text-sm">Développement d'interfaces responsives avec HTML/CSS/JS.</p>
-        </div>
-      </div>
+            
 
-      <div class="md:w-1/2 w-full">
-        <div class="relative w-full h-64 overflow-hidden rounded-2xl bg-black shadow-2xl">
-          <video class="w-full h-full object-cover" controls muted preload="metadata">
-            <source src="assets/video/cablage.mp4" type="video/mp4">
-          </video>
-          <div class="absolute bottom-2 left-2 bg-indigo-600 text-white text-[10px] px-2 py-1 rounded">DÉMONSTRATION STAGE</div>
-        </div>
-        <p class="text-xs text-center text-gray-500 mt-3 italic">Installation des switchs et test de connectivité en direct.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="bg-white py-16">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-10 text-center">Compétences</h2>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/html5.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">HTML</h3>
-      </div>
-
-      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/css3.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">CSS</h3>
-      </div>
-
-      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tailwindcss.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">Tailwind CSS</h3>
-      </div>
-
-      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/javascript.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">JavaScript</h3>
-      </div>
-
-      <a href="https://github.com/maimounaba990-hadja/mon-projet-C" target="_blank" class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl active:scale-95 transition-all duration-300 text-center block">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/c.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">git et GitHub</h3>
-      </a>
-
-      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/php.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">PHP</h3>
-      </div>
-
-      <a href="https://github.com/maimounaba990-hadja/mon-projet-C" target="_blank" class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl active:scale-95 transition-all duration-300 text-center block">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/c.svg" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">Langage C</h3>
-      </a>
-
-      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" class="w-10 h-10 mx-auto mb-4">
-        <h3 class="font-semibold">Câblage réseau</h3>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="container mx-auto py-20 px-6">
-
-  <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-    <div>
-      <h2 class="text-3xl font-bold border-l-8 border-indigo-600 pl-4 uppercase tracking-tighter">
+<section id="projects" class="max-w-5xl mx-auto px-6 py-16 fade-in">
+     <h2 class="text-3xl font-bold border-l-8 border-indigo-600 pl-4 uppercase tracking-tighter mb-10">
         Projets Récents
       </h2>
-      <p class="text-gray-600 mt-2 italic">
-        Cliquez sur les badges pour filtrer par catégorie.
-      </p>
-    </div>
 
-    <div class="flex gap-2">
-      <button onclick="filterProjects('all', this)"
-        class="filter-btn bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-bold">
-        Tous
-      </button>
-      <button onclick="filterProjects('wordpress', this)"
-        class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-lg text-sm font-bold">
-        WordPress
-      </button>
-      <button onclick="filterProjects('dev', this)"
-        class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-lg text-sm font-bold">
-        Développement
-      </button>
-    </div>
-  </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+            <div class="relative h-48 rounded-t-2xl overflow-hidden bg-gradient-to-tr from-yellow-400 to-yellow-300 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/javascript.svg" 
+                     alt="Logo JavaScript" class="w-16 h-16 invert opacity-80 group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Calculatrice JavaScript</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                    Application interactive développée en JavaScript. Renforce mes compétences en DOM et logique conditionnelle.
+                </p>
+                <img src="assets/images/creationcalcularice.png" alt="">
+                <a href="https://github.com/maimounaba990-hadja/Ma-calculatrice/" target="_blank" class="text-blue-600 font-semibold hover:underline">Voir le code →</a>
+            
+            </div>
+        </div>
 
-  <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  <div class="project-item wordpress bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-      <div class="relative h-52 bg-gradient-to-tr from-blue-500 to-indigo-400 flex items-center justify-center">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wix.svg" class="w-16 h-16 invert opacity-80 group-hover:rotate-12 transition-transform duration-500" alt="Wix">
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-indigo-700">Site Vitrine Wix.com</h3>
-        <p class="text-gray-600 text-sm mt-3 leading-relaxed">Pendant les vacances, j'avais commencé à créer une interface responsive.</p>
-        <a href="https://ton-site.wixsite.com" target="_blank"
-           class="inline-block mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-             Voir le site
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+            <div class="relative h-48 rounded-t-2xl overflow-hidden bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/c.svg" 
+                     alt="Logo C" class="w-16 h-16 invert opacity-80 group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Système Électoral (C)</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                    Application console en C pour gérer un processus électoral complet avec vote sécurisé.
+                    <img src="assets/images/systemelection.jpg" alt="">
+                </p>
+                <a href="https://github.com/maimounaba990-hadja/mon-projet-C" target="_blank" class="text-blue-600 font-semibold hover:underline">Voir le code →</a>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+            <div class="relative h-48 rounded-t-2xl overflow-hidden bg-gradient-to-tr from-green-500 to-lime-400 flex items-center justify-center">
+                <img src="assets/images/2.jpeg" alt="CamisonClothing Logo" class="w-16 h-16 opacity-80 group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">CamisonClothing</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                    Site e-commerce responsive pour une marque de vêtements. Travail sur Tailwind et design moderne.
+                </p>
+                <a href="https://maimounaba990-hadja.github.io/Camisooncloting/" target="_blank" class="text-blue-600 font-semibold hover:underline">Voir le site →</a>
+            </div>
+        </div>
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+         <div class="relative h-48 rounded-t-2xl overflow-hidden bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/java.svg" 
+             alt="Java Logo" class="w-16 h-16 invert opacity-80 group-hover:scale-110 transition-transform duration-500">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Java - Projet Banque</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+            Application Java pour gérer un système bancaire : inscription des clients, gestion des comptes et prêts. 
+            Le projet m'a permis de renforcer mes compétences en Java, logique conditionnelle, et structures de données.
+        </p>
+        
+        <a href="https://github.com/maimounaba990-hadja/ProjetBank" 
+           target="_blank" 
+           class="text-blue-600 font-semibold hover:underline">
+           Voir le code → 
         </a>
-        
-        <div class="mt-6 flex flex-col gap-3">
-          <a href="#" target="_blank" class="flex items-center justify-center gap-2 bg-gray-900 text-white py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
-             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="w-4 h-4 invert" alt="">
-             Voir sur GitHub
-          </a>
-        </div>
-      </div>
     </div>
-
-    <div class="project-item dev bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-      <div class="relative h-52 bg-gradient-to-tr from-indigo-600 to-purple-500 flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tailwindcss.svg" class="w-16 h-16 invert opacity-80 group-hover:scale-110 transition-transform duration-500" alt="Tailwind">
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-indigo-700">Portfolio Interactif</h3>
-        <p class="text-gray-600 text-sm mt-3 leading-relaxed">Code source de ce portfolio. Utilisation de Tailwind CSS et JavaScript pur.</p>
-        
-        <div class="mt-6 flex flex-col gap-3">
-          <a href="https://github.com/maimounaba990-hadja/portfolio" target="_blank" class="flex items-center justify-center gap-2 bg-gray-900 text-white py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
-             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="w-4 h-4 invert" alt="">
-
-             Code Source
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <a href="https://github.com/maimounaba990-hadja/mon-projet-C" 
-       target="_blank"
-       class="project-item dev block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border cursor-pointer">
-
-      <div class="relative h-48 bg-gray-900 flex items-center justify-center overflow-hidden">
-        <img src="capture.png"
-             class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-500"
-             alt="Projet C Système Électoral">
-        <div class="absolute text-white font-mono text-xs text-center p-4">
-          ./systeme_electoral<br>> Calcul des résultats...
-        </div>
-      </div>
-
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-indigo-700">
-          Système de Gestion Électorale (C)
-        </h3>
-        <p class="text-gray-600 text-sm mt-3">
-          Application console en langage C pour la gestion complète d'un processus electoral national.
-        </p>
-        <p class="mt-4 text-xs font-bold text-indigo-600 uppercase">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="w-4 h-4 invert" alt="">
-          Voir le code sur GitHub 
-        </p>
-      </div>
-    </a>
-<div class="project-item dev bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-  <div class="relative h-52 bg-gradient-to-tr from-green-500 to-lime-400 flex items-center justify-center">
-    <img src="assets/images/2.jpeg" class="w-16 h-16 invert opacity-80 group-hover:scale-110 transition-transform duration-500" alt="CamisonCloting Logo">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-indigo-700">CamisonCloting</h3>
-    <p class="text-gray-600 text-sm mt-3 leading-relaxed">Site e-commerce pour une marque de vêtements avec interface moderne et responsive.</p>
-    <div class="mt-6 flex flex-col gap-3">
-      </a>
-      <a href="https://github.com/maimounaba990-hadja/camisoncloting" target="_blank" class="flex items-center justify-center gap-2 bg-gray-900 text-white py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="w-4 h-4 invert" alt="">
-        Voir sur le site GitHub
-      </a>
-    </div>
-  </div>
 </div>
 
-  </div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+    <div class="relative h-48 rounded-t-2xl overflow-hidden bg-gradient-to-tr from-blue-500 to-indigo-400 flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wix.svg" 
+             class="w-16 h-16 invert opacity-80 group-hover:rotate-12 transition-transform duration-500" 
+             alt="Wix Logo">
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-indigo-700">Site Vitrine Wix (en cours)</h3>
+    <video width="400" controls>
+        <source src="assets/video/video wix.mp4" type="video/mp4">
+          <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+          Pendant les vacances, j'avais commencee a cree une interface responsive sur Wix.
+        </p>
+    </video>
+        <a href="https://mon-projet-wix.wixsite.com/monsite" target="_blank"
+           class="inline-block mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+           Voir la video->
+        </a>
+    </div>
+</div>
+
 </section>
 
-<script>
-function filterProjects(category, btn) {
-  const items = document.querySelectorAll('.project-item');
-  const buttons = document.querySelectorAll('.filter-btn');
-
-  buttons.forEach(b => {
-    b.classList.remove('bg-indigo-600', 'text-white');
-    b.classList.add('bg-white', 'text-gray-700');
-  });
-
-  btn.classList.add('bg-indigo-600', 'text-white');
-
-  items.forEach(item => {
-    if(category === 'all' || item.classList.contains(category)){
-      item.classList.remove('hidden');
-      setTimeout(()=>{item.style.opacity='1'; item.style.transform='scale(1)';},10);
-    } else {
-      item.style.opacity='0';
-      item.style.transform='scale(0.95)';
-      setTimeout(()=>{item.classList.add('hidden');},300);
-    }
-  });
-}
-</script>
-
-<section id="contact" class="bg-indigo-700 text-white py-16">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-6">Contact</h2>
-    <p class="mb-4">
-      <a href="mailto:maimounaba990@email.com" class="underline hover:text-gray-200">
-        maimounaba990@email.com
-      </a>
-    </p>
-    <p class="mb-8">
-      <a href="tel:+221777194237" class="underline hover:text-gray-200">
-        +221 77 719 42 37
-      </a>
-    </p>
-
-    <form action="mailto:maimounaba990@email.com" method="POST" class="max-w-xl mx-auto mb-12 space-y-4">
-      <input type="text" name="name" placeholder="Votre nom" required
-             class="w-full p-3 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <input type="email" name="email" placeholder="Votre email" required
-             class="w-full p-3 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <textarea name="message" placeholder="Votre message" rows="5" required
-                class="w-full p-3 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-      <button type="submit" class="bg-white text-indigo-700 px-6 py-3 rounded-lg font-bold hover:bg-indigo-50 transition shadow-md">
-        Envoyer
-      </button>
-    </form>
-    <div class="flex justify-center gap-6 text-3xl">
-      <a href="https://github.com/maimounaba990-hadja" target="_blank" class="hover:scale-125 transition">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-8 h-8">
-      </a>
-     <a href="https://wa.me/221777194237" target="_blank" rel="noopener noreferrer"class="hover:scale-125 transition">
-       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"alt="WhatsApp" class="w-8 h-8">
-       </a>
-      <a href="https://www.facebook.com/maimouna.ba" target="_blank" class="hover:scale-125 transition">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-8 h-8">
-      </a>
-      <a href="https://www.tiktok.com/@Mounasba46" target="_blank" class="hover:scale-125 transition">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" class="w-8 h-8">
-        </a>
-        <a href="https://wwww.wix.com/mysite" target="_blank" class="hover:scale-125 transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png"alt="Site web" class="w-6 h-6">  
-        </a>
-     </div>
-  </div>
+<section id="skills" class="bg-slate-900 text-white py-20 fade-in">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Mes Compétences</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">HTML</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">CSS / Tailwind</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">JavaScript</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">PHP</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">Langage C</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">Git & GitHub</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">WordPress</div>
+            <div class="bg-slate-800 p-6 rounded-2xl hover:bg-blue-600 hover:scale-105 transition transform">Câblage Réseau</div>
+        </div>
+    </div>
+    <div class="text-center mt-10">
+    <a href="realisations.html" class="text-blue-600 font-semibold hover:underline">
+    Voir toutes mes compétences →
+</a>
+</div>
 </section>
-<footer class="bg-black text-white text-center py-4">
-  <p> © <span id="year"></span> - Mon Portfolio | Maimouna BA</p>
+
+<footer id="contact" class="max-w-5xl mx-auto px-6 py-12 text-center fade-in">
+    <h2 class="text-2xl  text-blue-500 font-bold mb-4">Travaillons ensemble</h2>
+    <p class="mb-6 text-amber-100">Disponible pour stage ou collaboration</p>
+    <a href="mailto:maimounaba990@gmail.com" class="text-blue-600 font-bold underline">
+        maimounaba990@gmail.com
+    </a>
+    <div class="flex justify-center gap-6 text-3xl mt-4">
+        <a href="https://github.com/maimounaba990-hadja" target="_blank" aria-label="GitHub" class="hover:scale-125 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-8 h-8">
+        </a>
+        <a href="https://wa.me/221777194237" target="_blank" aria-label="WhatsApp" class="hover:scale-125 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="w-8 h-8">
+        </a>
+        <a href="https://www.facebook.com/maimouna.ba" target="_blank" aria-label="Facebook" class="hover:scale-125 transition">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-8 h-8">
+        </a>
+        <a href="https://www.tiktok.com/@Mounasba46" target="_blank" aria-label="TikTok" class="hover:scale-125 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" class="w-8 h-8">
+        </a>
+    </div>
 </footer>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleDark() {
+        const root = document.documentElement;
+        const btn = document.getElementById('dark-toggle');
+        root.classList.toggle('dark');
+        btn.textContent = root.classList.contains('dark') ? '☀️' : '🌙';
+    }
+
+
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+        menu.classList.toggle('flex-col');
+        menu.classList.toggle('absolute');
+        menu.classList.toggle('top-16');
+        menu.classList.toggle('left-0');
+        menu.classList.toggle('w-full');
+        menu.classList.toggle('bg-white');
+        menu.classList.toggle('dark:bg-slate-800');
+        menu.classList.toggle('p-6');
+        menu.classList.toggle('z-50');
+    }
+
+    // Fade-in au scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Texte dynamique
+    const dynamicText = document.getElementById("dynamic-text");
+    const words = ["Génie Informatique", "Développement Web", "Frontend Developer", "Création d’Interfaces"];
+    let i = 0;
+    setInterval(() => {
+        dynamicText.style.opacity = 0;
+        setTimeout(() => {
+            dynamicText.textContent = words[i];
+            dynamicText.style.opacity = 1;
+            i = (i + 1) % words.length;
+        }, 300);
+    }, 2500);
 </script>
 
 </body>
