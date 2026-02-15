@@ -29,24 +29,24 @@
 <body class="bg-[url('assets/images/fond.png')] bg-cover bg-center text-slate-900 dark:bg-slate-900 dark:text-white transition-colors duration-500 '>
 
 
-<nav class="sticky top-0 z-50 bg-white dark:bg-slate-800 backdrop-blur-md border-b border-slate-200 dark:border-slate-700">
-    <div class="max-w-5xl mx-auto px-6 py-10 flex justify-between items-center">
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-100 backdrop-blur-md border-b border-slate-200 dark:border-slate-300">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
         <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Maimouna BA
         </span>
 
         <div class="flex items-center gap-4">
-            <ul id="menu" class="hidden md:flex gap-6 text-sm font-semibold">
-                <li><a href="#about" class="hover:text-indigo-600 transition">À propos</a></li>
-                <li><a href="#experience" class="hover:text-indigo-600 transition">Parcours</a></li>
-                <li><a href="#skills" class="hover:text-indigo-600 transition">Compétences</a></li>
-                <li><a href="#projects" class="hover:text-indigo-600 transition">Projets</a></li>
-                <li><a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Contact</a></li>
+            <ul id="menu" class="hidden md:flex fixed md:relative top-[64px] md:top-0 left-0 w-full md:w-auto bg-white dark:bg-slate-800 md:bg-transparent flex-col md:flex-row gap-6 p-6 md:p-0 text-sm font-semibold border-b md:border-none border-slate-200 dark:border-slate-700 transition-all shadow-lg md:shadow-none">
+                <li><a href="#about" class="hover:text-indigo-600  text-amber-50 transition block" onclick="closeMenu()">À propos</a></li>
+                <li><a href="#experience" class="hover:text-indigo-600  text-amber-50 transition block" onclick="closeMenu()">Parcours</a></li>
+                <li><a href="#skills" class="hover:text-indigo-600  text-amber-50 transition block" onclick="closeMenu()">Compétences</a></li>
+                <li><a href="#projects" class="hover:text-indigo-600  text-amber-50 transition block" onclick="closeMenu()">Projets</a></li>
+                <li><a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition inline-block" onclick="closeMenu()">Contact</a></li>
             </ul>
 
             <button id="dark-toggle" onclick="toggleDark()" class="bg-slate-200 dark:bg-slate-700 px-3 py-1 rounded-lg text-sm">🌙</button>
             
-            <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+            <button class="md:hidden text-2xl" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
         </div>
     </div>
 </nav>
@@ -80,7 +80,7 @@
 </header>
 
 <section id="experience" class="max-w-5xl mx-auto px-6 py-16 fade-in">
-    <h2 class="text-3xl font-bold border-l-8 border-blue-600 pl-4 uppercase tracking-tighter mb-12">
+    <h2 class="text-3xl font-bold border-l-8 border-blue-600 pl-4 text-gray-700 uppercase tracking-tighter mb-12">
         Mon Parcours
     </h2>
 
@@ -193,9 +193,8 @@
 
     <div class="p-6">
         <h3 class="text-xl font-bold text-indigo-700">Site Vitrine Wix (en cours)</h3>
-    <video width="400" controls>
-        <source src="assets/video/video wix.mp4" type="video/mp4">
-          <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+   <video class="w-full rounded-lg shadow-sm" controls>
+    <source src="assets/video/video wix.mp4" type="video/mp4">
           Pendant les vacances, j'avais commencee a cree une interface responsive sur Wix.
         </p>
     </video>
@@ -224,31 +223,70 @@
     </div>
     <div class="text-center mt-10">
     <a href="realisations.html" class="text-blue-600 font-semibold hover:underline">
-    Voir toutes mes compétences →
+    Voir toutes mes travaux →
 </a>
 </div>
 </section>
 
-<footer id="contact" class="max-w-5xl mx-auto px-6 py-12 text-center fade-in">
-    <h2 class="text-2xl  text-blue-500 font-bold mb-4">Travaillons ensemble</h2>
-    <p class="mb-6 text-amber-100">Disponible pour stage ou collaboration</p>
-    <a href="mailto:maimounaba990@gmail.com" class="text-blue-600 font-bold underline">
-        maimounaba990@gmail.com
-    </a>
-    <div class="flex justify-center gap-6 text-3xl mt-4">
-        <a href="https://github.com/maimounaba990-hadja" target="_blank" aria-label="GitHub" class="hover:scale-125 transition">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-8 h-8">
-        </a>
-        <a href="https://wa.me/221777194237" target="_blank" aria-label="WhatsApp" class="hover:scale-125 transition">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="w-8 h-8">
-        </a>
-        <a href="https://www.facebook.com/maimouna.ba" target="_blank" aria-label="Facebook" class="hover:scale-125 transition">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-8 h-8">
-        </a>
-        <a href="https://www.tiktok.com/@Mounasba46" target="_blank" aria-label="TikTok" class="hover:scale-125 transition">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" class="w-8 h-8">
-        </a>
+<section id="contact" class="max-w-5xl mx-auto px-6 py-20 fade-in">
+    <h2 class="text-3xl font-bold border-l-8 border-blue-600 pl-4 uppercase tracking-tighter mb-12">
+        Contactez-moi
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12 bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700">
+        
+        <div>
+            <h3 class="text-2xl font-bold mb-4 text-blue-600">Travaillons ensemble !</h3>
+            <p class="text-slate-600 dark:text-slate-300 mb-8">
+                Je suis actuellement à la recherche d'un stage ou de projets en freelance. N'hésitez pas à m'envoyer un message !
+            </p>
+
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 group">
+                    <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition">
+                        📧
+                    </div>
+                    <a href="mailto:maimounaba990@gmail.com" class="font-medium hover:text-blue-600 transition">maimounaba990@gmail.com</a>
+                </div>
+                <div class="flex items-center gap-4 group">
+                    <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg group-hover:bg-green-600 group-hover:text-white transition">
+                        📱
+                    </div>
+                    <a href="https://wa.me/221777194237" class="font-medium hover:text-green-600 transition">+221 77 719 42 37</a>
+                </div>
+            </div>
+            <div class="mt-10">
+                <p class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Retrouvez-moi sur</p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/maimounaba990-hadja" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-black hover:text-white transition transform hover:-translate-y-1">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" class="w-5 h-5 dark:invert" alt="GitHub">
+                    </a>
+                    <a href="#" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-blue-700 hover:text-white transition transform hover:-translate-y-1">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" class="w-5 h-5 dark:invert" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.tiktok.com/@Mounasba46" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-pink-600 hover:text-white transition transform hover:-translate-y-1">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" class="w-5 h-5 dark:invert" alt="TikTok">
+                    </a>
+                </div>
+            </div>
+        </div>
+<form action="https://formspree.io/f/meelgpbw" method="POST" class="flex flex-col gap-4">
+            <input type="text" name="name" placeholder="Votre Nom" required 
+                class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-blue-600 outline-none transition">
+            <input type="email" name="email" placeholder="Votre Email" required 
+                class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-blue-600 outline-none transition">
+            <textarea name="message" rows="4" placeholder="Votre Message" required 
+                class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-blue-600 outline-none transition"></textarea>
+            <button type="submit" 
+                class="bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transform hover:scale-[1.02] transition duration-300 shadow-lg shadow-blue-600/20">
+                Envoyer le message
+            </button>
+        </form>
     </div>
+</section>
+
+<footer class="py-8 text-center text-sm text-slate-500">
+    &copy; 2026 Maimouna BA - Tous droits réservés.
 </footer>
 
 <script>
@@ -262,20 +300,19 @@
 
 
     function toggleMenu() {
-        const menu = document.getElementById('menu');
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
-        menu.classList.toggle('flex-col');
-        menu.classList.toggle('absolute');
-        menu.classList.toggle('top-16');
-        menu.classList.toggle('left-0');
-        menu.classList.toggle('w-full');
-        menu.classList.toggle('bg-white');
-        menu.classList.toggle('dark:bg-slate-800');
-        menu.classList.toggle('p-6');
-        menu.classList.toggle('z-50');
-    }
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+}
 
+// Fonction pour fermer le menu quand on clique sur un lien (très important en mobile !)
+function closeMenu() {
+    const menu = document.getElementById('menu');
+    if (window.innerWidth < 768) { // Ne s'applique qu'en mobile
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+    }
+}
     // Fade-in au scroll
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {

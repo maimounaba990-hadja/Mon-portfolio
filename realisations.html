@@ -5,72 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Réalisations | Maimouna BA</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=2000');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-zoom:hover img, .card-zoom:hover video {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+   
 </head>
-<body class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300">
 
-<header class="text-center py-10">
-    <h1 class="text-4xl font-bold mb-4">Mes Réalisations</h1>
-    <p class="text-lg mb-6">Photos, logos et vidéos de mes projets.</p>
-    <a href="index.html" class="text-blue-600 hover:underline">← Retour au Portfolio</a>
+<header class="text-center py-16 px-4">
+    <h1 class="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        Mes Réalisations
+    </h1>
+    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">Découvrez mes travaux en design, réseaux et développement.</p>
+    <a href="index.html" class="inline-flex items-center gap-2 px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:shadow-md transition text-sm font-medium">
+        <span>←</span> Retour au Portfolio
+    </a>
 </header>
-
-<main class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <img src="assets/images/affiche.jpeg" alt="Projet 1" class="rounded-lg mb-2">
-        <p class="text-center text-sm">Projet 1 lors de mon stage jai realise des affiches avec photoshop</p>
+<main class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+    
+    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
+        <div class="overflow-hidden">
+            <img src="assets/images/affiche.jpeg" alt="Affiche Photoshop" class="w-full h-64 object-cover transition">
+        </div>
+        <div class="p-5">
+            <span class="text-xs font-bold uppercase text-blue-600">Communication Visuelle</span>
+            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Conception d'Affiches Publicitaires</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                Lors de mon immersion en stage, j'ai été responsable de la création de supports de communication visuelle. En utilisant **Adobe Photoshop**, j'ai travaillé sur la hiérarchie des informations, le choix des typographies et l'équilibre des couleurs pour maximiser l'impact visuel et transmettre un message clair au public cible.
+            </p>
+        </div>
     </div>
 
-    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <video controls class="rounded-lg w-full">
-            <source src="assets/video/cablage.mp4" type="video/mp4"><br>
+    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
+        <video controls class="w-full h-64 object-cover transition">
+            <source src="assets/video/cablage.mp4" type="video/mp4">
         </video>
-        <p class="text-center text-sm mt-2">cablage reseau</p>
+        <div class="p-5">
+            <span class="text-xs font-bold uppercase text-green-600">Infrastructure Réseau</span>
+            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Installation & Sertissage de Câbles</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                Ce projet illustre mes compétences en infrastructure physique. J'ai réalisé le déploiement de câblage structuré, incluant le **sertissage de connecteurs RJ45** selon les normes T568A/B. J'ai veillé au respect des rayons de courbure et à l'organisation des goulottes pour garantir une transmission de données sans interférences.
+            </p>
+        </div>
     </div>
 
-    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <video controls class="rounded-lg w-full">
-            <source src="assets/video/vidio switch.mp4" type="video/mp4"><br>
+    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
+        <video controls class="w-full h-64 object-cover transition">
+            <source src="assets/video/vidio switch.mp4" type="video/mp4">
         </video>
-        <p class="text-center text-sm mt-2">nous avons mis des switch et tester aussi </p>
+        <div class="p-5">
+            <span class="text-xs font-bold uppercase text-green-600">Administration Système</span>
+            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Configuration de Commutateurs (Switch)</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                Travail pratique sur la mise en réseau d'équipements actifs. J'ai procédé à l'installation physique de switches en rack, suivie de tests de connectivité et de vérification des tables d'adressage MAC. Cette étape est cruciale pour assurer une segmentation efficace et une haute disponibilité du réseau local (LAN).
+            </p>
+        </div>
     </div>
 
-    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <video controls class="rounded-lg w-full">
-            <source src="assets/video/video html.mp4" type="video/mp4"><br>
+    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
+        <video controls class="w-full h-64 object-cover transition">
+            <source src="assets/video/video html.mp4" type="video/mp4">
         </video>
-        <p class="text-center text-sm mt-2">appercu sur mon projet html sur lagence immobilier</p>
-    </div>
-     <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <video controls class="rounded-lg w-full">
-            <source src="" type="video/mp4"><br>
-        </video>
-        <p class="text-center text-sm mt-2">appercu sur mon projet html sur lagence immobilier</p>
-    </div>
-    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <h1>je realise aussi des logos</h1>
-        <img src="assets/images/moouna.jpeg" alt="Projet 1" class="rounded-lg mb-2">
-        <p class="text-center text-sm">mon logo</p>
+        <div class="p-5">
+            <span class="text-xs font-bold uppercase text-orange-600">Développement Web</span>
+            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Interface d'Agence Immobilière</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                Développement d'une plateforme web statique utilisant **HTML5 et Tailwind CSS**. Le projet met l'accent sur l'expérience utilisateur (UX) avec un design responsive s'adaptant à tous les écrans. J'ai intégré des sections de filtrage de biens et une structure sémantique optimisée pour le référencement naturel.
+            </p>
+        </div>
     </div>
 
-<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <h1>je realise aussi des logos</h1>
-        <img src="assets/images/1.jpeg" alt="Projet 1" class="rounded-lg mb-2">
-        <p class="text-center text-sm">mon logo</p>
+    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
+        <div class="overflow-hidden">
+            <img src="assets/images/moouna.jpeg" alt="Logo Moouna" class="w-full h-64 object-cover transition">
+        </div>
+        <div class="p-5">
+            <span class="text-xs font-bold uppercase text-purple-600">Identité Visuelle</span>
+            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Création de Logos Professionnels</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                Conception de logos minimalistes et mémorables. Mon processus créatif commence par une phase de "mind-mapping" suivie de croquis, pour finir par une vectorisation précise. L'objectif est de créer une identité forte, capable de fonctionner aussi bien sur de petits supports que sur de grandes affiches.
+            </p>
+        </div>
     </div>
 
-    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <h1>je realise aussi des logos</h1>
-        <img src="assets/images/11.jpeg" alt="Projet 1" class="rounded-lg mb-2">
-        <p class="text-center text-sm">mon logo</p>
-    </div>
-
-     <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-lg">
-        <h1>je realise aussi des logos</h1>
-        <img src="assets/images/12.jpeg" alt="Projet 1" class="rounded-lg mb-2">
-        <p class="text-center text-sm">mon logo</p>
-    </div>
 </main>
 
+<footer class="text-center py-10 text-slate-500 text-sm">
+    &copy; 2026 Maimouna BA. Tous droits réservés.
+</footer>
 
 </body>
 </html>
