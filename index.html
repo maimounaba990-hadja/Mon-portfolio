@@ -60,7 +60,7 @@
   </div>
 
     <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
-        Futur Ingénieur en <span id="dynamic-text" class="text-blue-600">Génie Informatique</span>
+        Future Ingénieur en <span id="dynamic-text" class="text-blue-600">Génie Informatique</span>
     </h1>
 <p class="text-lg text-amber-100 dark:text-slate-300 max-w-2xl mx-auto mb-10 fade-in">
     Passionnée par l'algorithmique et le développement logiciel, je poursuis actuellement une formation en Génie Informatique où je développe des compétences solides en programmation, conception d’applications et résolution de problèmes complexes.
@@ -219,10 +219,10 @@
     Ce travail m'a permis d'améliorer mes compétences en design web, organisation visuelle et expérience utilisateur.
 </p>
     </video>
-        <a href="https://mon-projet-wix.wixsite.com/monsite" target="_blank"
-           class="inline-block mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-           Voir la video->
+        <a href="https://wwww.wix.com/mysite" target="_blank" class="hover:scale-125 transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png"alt="Site web" class="w-6 h-6">  
         </a>
+    </a>
     </div>
 </div>
 
@@ -263,8 +263,6 @@
     Sérieuse, motivée et déterminée à évoluer, je suis ouverte à toute collaboration me permettant de mettre en pratique mes compétences techniques et d'apprendre davantage.
     N'hésitez pas à me contacter pour discuter d'un projet ou d'une opportunité.
 </p>
-
-
             <div class="space-y-4">
                 <div class="flex items-center gap-4 group">
                     <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition">
@@ -291,6 +289,12 @@
                     <a href="https://www.tiktok.com/@Mounasba46" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-pink-600 hover:text-white transition transform hover:-translate-y-1">
                         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" class="w-5 h-5 dark:invert" alt="TikTok">
                     </a>
+                     <a href="https://wwww.wix.com/mysite" target="_blank" class="hover:scale-125 transition">
+                     <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png"alt="Site web" class="w-6 h-6">  
+            </a>
+                <a href="https://www.facebook.com/maimouna.ba" target="_blank" class="hover:scale-125 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-8 h-8">
+             </a>
                 </div>
             </div>
         </div>
@@ -329,15 +333,13 @@
     menu.classList.toggle('flex');
 }
 
-// Fonction pour fermer le menu quand on clique sur un lien (très important en mobile !)
 function closeMenu() {
     const menu = document.getElementById('menu');
-    if (window.innerWidth < 768) { // Ne s'applique qu'en mobile
+    if (window.innerWidth < 768) { 
         menu.classList.add('hidden');
         menu.classList.remove('flex');
     }
 }
-    // Fade-in au scroll
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
@@ -347,7 +349,6 @@ function closeMenu() {
     });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Texte dynamique
     const dynamicText = document.getElementById("dynamic-text");
     const words = ["Génie Informatique", "Développement Web", "Frontend Developer", "Création d’Interfaces"];
     let i = 0;
