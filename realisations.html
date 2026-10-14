@@ -1,112 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Réalisations | Maimouna BA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=2000');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-        .card-zoom:hover img, .card-zoom:hover video {
-            transform: scale(1.05);
-            transition: transform 0.3s ease-in-out;
-        }
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
-   
-</head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300">
-
-<header class="text-center py-16 px-4">
-    <h1 class="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-        Mes Réalisations
-    </h1>
-    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">Découvrez mes travaux en design, réseaux et développement.</p>
-    <a href="index.html" class="inline-flex items-center gap-2 px-6 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:shadow-md transition text-sm font-medium">
-        <span>←</span> Retour au Portfolio
-    </a>
-</header>
-<main class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
-    
-    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
-        <div class="overflow-hidden">
-            <img src="assets/images/affiche.jpeg" alt="Affiche Photoshop" class="w-full h-64 object-cover transition">
-        </div>
-        <div class="p-5">
-            <span class="text-xs font-bold uppercase text-blue-600">Communication Visuelle</span>
-            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Conception d'Affiches Publicitaires</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-                Lors de mon immersion en stage, j'ai été responsable de la création de supports de communication visuelle. En utilisant **Adobe Photoshop**, j'ai travaillé sur la hiérarchie des informations, le choix des typographies et l'équilibre des couleurs pour maximiser l'impact visuel et transmettre un message clair au public cible.
-            </p>
-        </div>
-    </div>
-
-    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
-        <video controls class="w-full h-64 object-cover transition">
-            <source src="assets/video/cablage-switch.mp4" type="video/mp4">
-        </video>
-        <div class="p-5">
-            <span class="text-xs font-bold uppercase text-green-600">Infrastructure Réseau</span>
-            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Installation & Sertissage de Câbles</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-                Ce projet illustre mes compétences en infrastructure physique. J'ai réalisé le déploiement de câblage structuré, incluant le **sertissage de connecteurs RJ45** selon les normes T568A/B. J'ai veillé au respect des rayons de courbure et à l'organisation des goulottes pour garantir une transmission de données sans interférences.
-            </p>
-        </div>
-    </div>
-
-    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
-        <video controls class="w-full h-64 object-cover transition">
-            <source src="assets/video/video_switch.mp4" type="video/mp4">
-        </video>
-        <div class="p-5">
-            <span class="text-xs font-bold uppercase text-green-600">Administration Système</span>
-            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Configuration de Commutateurs (Switch)</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-                Travail pratique sur la mise en réseau d'équipements actifs. J'ai procédé à l'installation physique de switches en rack, suivie de tests de connectivité et de vérification des tables d'adressage MAC. Cette étape est cruciale pour assurer une segmentation efficace et une haute disponibilité du réseau local (LAN).
-            </p>
-        </div>
-    </div>
-
-    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
-        <video controls class="w-full h-64 object-cover transition">
-            <source src="assets/video/video_html.mp4" type="video/mp4">
-        </video>
-        <div class="p-5">
-            <span class="text-xs font-bold uppercase text-orange-600">Développement Web</span>
-            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Interface d'Agence Immobilière</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-                Développement d'une plateforme web statique utilisant **HTML5 et Tailwind CSS**. Le projet met l'accent sur l'expérience utilisateur (UX) avec un design responsive s'adaptant à tous les écrans. J'ai intégré des sections de filtrage de biens et une structure sémantique optimisée pour le référencement naturel.
-            </p>
-        </div>
-    </div>
-
-    <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700 card-zoom">
-        <div class="overflow-hidden">
-            <img src="assets/images/moouna.jpeg" alt="Logo Moouna" class="w-full h-64 object-cover transition">
-        </div>
-        <div class="p-5">
-            <span class="text-xs font-bold uppercase text-purple-600">Identité Visuelle</span>
-            <h3 class="text-lg font-bold mt-1 text-slate-800 dark:text-white">Création de Logos Professionnels</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-                Conception de logos minimalistes et mémorables. Mon processus créatif commence par une phase de "mind-mapping" suivie de croquis, pour finir par une vectorisation précise. L'objectif est de créer une identité forte, capable de fonctionner aussi bien sur de petits supports que sur de grandes affiches.
-            </p>
-        </div>
-    </div>
-
-</main>
-
-<footer class="text-center py-10 text-slate-500 text-sm">
-    &copy; 2026 Maimouna BA. Tous droits réservés.
-</footer>
-
-</body>
-</html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Les réalisations de Maimouna BA en développement, réseaux et design."><title>Réalisations — Maimouna BA</title><script src="https://cdn.tailwindcss.com"></script><style>body{font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#fff8fb;color:#17131a}.serif{font-family:Georgia,serif}.card{transition:transform .3s ease,box-shadow .3s ease}.card:hover{transform:translateY(-6px);box-shadow:0 22px 45px rgba(23,19,26,.14)}.card img,.card video{transition:transform .4s ease}.card:hover img,.card:hover video{transform:scale(1.03)}</style></head>
+<body>
+<nav class="sticky top-0 z-50 border-b border-[#eadce3] bg-[#fff8fb]/90 backdrop-blur-xl"><div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8"><a href="index.html" class="text-lg font-bold">Maimouna <span class="text-[#e63872]">BA.</span></a><a href="index.html" class="rounded-full bg-[#17131a] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#e63872]">← Retour au portfolio</a></div></nav>
+<header class="mx-auto max-w-6xl px-5 py-20 lg:px-8 lg:py-28"><p class="text-xs font-bold uppercase tracking-[.28em] text-[#e63872]">Archive créative · 02</p><h1 class="serif mt-4 max-w-3xl text-6xl leading-none sm:text-8xl">Mes <em class="text-[#e63872]">réalisations.</em></h1><p class="mt-7 max-w-xl text-lg leading-8 text-[#766d78]">Une sélection de travaux qui illustrent mon approche du développement, des réseaux et de la création visuelle.</p></header>
+<main class="mx-auto grid max-w-6xl gap-6 px-5 pb-24 sm:grid-cols-2 lg:grid-cols-3 lg:px-8">
+<article class="card overflow-hidden rounded-3xl border border-[#eadce3] bg-white"><div class="h-64 overflow-hidden"><img src="assets/images/affiche.jpeg" alt="Affiche publicitaire conçue avec Photoshop" class="h-full w-full object-cover"></div><div class="p-6"><span class="text-xs font-bold uppercase tracking-wider text-[#e63872]">Communication visuelle</span><h2 class="mt-2 text-xl font-bold">Affiches publicitaires</h2><p class="mt-3 text-sm leading-6 text-[#766d78]">Création de supports de communication visuelle durant mon immersion en stage, avec un travail sur la hiérarchie, les typographies et l'équilibre des couleurs.</p></div></article>
+<article class="card overflow-hidden rounded-3xl border border-[#eadce3] bg-white"><video controls class="h-64 w-full object-cover"><source src="assets/video/cablage-switch.mp4" type="video/mp4"></video><div class="p-6"><span class="text-xs font-bold uppercase tracking-wider text-[#e63872]">Infrastructure réseau</span><h2 class="mt-2 text-xl font-bold">Installation & sertissage</h2><p class="mt-3 text-sm leading-6 text-[#766d78]">Déploiement de câblage structuré et sertissage de connecteurs RJ45 selon les normes T568A/B.</p></div></article>
+<article class="card overflow-hidden rounded-3xl border border-[#eadce3] bg-white"><video controls class="h-64 w-full object-cover"><source src="assets/video/video_switch.mp4" type="video/mp4"></video><div class="p-6"><span class="text-xs font-bold uppercase tracking-wider text-[#e63872]">Administration système</span><h2 class="mt-2 text-xl font-bold">Configuration de switches</h2><p class="mt-3 text-sm leading-6 text-[#766d78]">Installation physique, tests de connectivité et vérification des tables d'adressage MAC pour un réseau local fiable.</p></div></article>
+<article class="card overflow-hidden rounded-3xl border border-[#eadce3] bg-white"><video controls class="h-64 w-full object-cover"><source src="assets/video/video_html.mp4" type="video/mp4"></video><div class="p-6"><span class="text-xs font-bold uppercase tracking-wider text-[#e63872]">Développement web</span><h2 class="mt-2 text-xl font-bold">Interface d'agence immobilière</h2><p class="mt-3 text-sm leading-6 text-[#766d78]">Plateforme statique en HTML5 et Tailwind CSS, responsive et pensée pour une expérience utilisateur fluide.</p></div></article>
+<article class="card overflow-hidden rounded-3xl border border-[#eadce3] bg-white"><div class="h-64 overflow-hidden"><img src="assets/images/moouna.jpeg" alt="Logo Moouna créé par Maimouna BA" class="h-full w-full object-cover"></div><div class="p-6"><span class="text-xs font-bold uppercase tracking-wider text-[#e63872]">Identité visuelle</span><h2 class="mt-2 text-xl font-bold">Logos professionnels</h2><p class="mt-3 text-sm leading-6 text-[#766d78]">Conception de logos minimalistes et mémorables, du mind-mapping à la vectorisation précise.</p></div></article>
+<article class="card overflow-hidden rounded-3xl border border-[#eadce3] bg-white"><video controls class="h-64 w-full object-cover"><source src="assets/video/video_wix.mp4" type="video/mp4"></video><div class="p-6"><span class="text-xs font-bold uppercase tracking-wider text-[#e63872]">Création web</span><h2 class="mt-2 text-xl font-bold">Site vitrine Wix <span class="text-sm font-normal text-[#766d78]">(en cours)</span></h2><p class="mt-3 text-sm leading-6 text-[#766d78]">Conception d'une interface responsive et moderne adaptée au mobile, à la tablette et à l'ordinateur.</p><a href="https://wwww.wix.com/mysite" target="_blank" rel="noreferrer" class="mt-5 inline-block text-sm font-bold text-[#e63872]">Voir le site →</a></div></article>
+</main><footer class="border-t border-[#eadce3] py-8 text-center text-sm text-[#766d78]">© 2026 Maimouna BA · Tous droits réservés.</footer></body></html>
